@@ -1,7 +1,26 @@
+// import functions file
+@import '../node_modules/bootstrap/scss/functions';
+
+
 
 // changes global variables
 $enable-rounded: false;
 $enable-negative-margins: true;
+
+// theme colour variables => Found in the variables.scss file
+
+$primary: #ff3287;
+$secondary: #16be73;
+$light: #fff9f1;
+
+// these imports are taken in afterwards, so we can customize eg. colours and it uses it afterwards
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+.btn-truncate{
+    max-width: 100px;
+    @include text-truncate;
+}
 
 // imports a file, this one imports bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
