@@ -1,0 +1,9 @@
+
+// changes global variables
+$enable-rounded: false;
+$enable-negative-margins: true;
+
+// imports a file, this one imports bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
