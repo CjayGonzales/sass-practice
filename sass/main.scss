@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 // import functions file
 @import '../node_modules/bootstrap/scss/functions';
 
@@ -13,6 +16,51 @@ $primary: #ff3287;
 $secondary: #16be73;
 $light: #fff9f1;
 
+// links
+
+$link-color: $secondary;
+$link-decoration: none;
+$link-hover-decoration: underline;
+$link-shade-percentage: 30%;
+$link-hover-color: shift-color($link-color, -$link-shade-percentage);
+
+//breakpoints / custom grids
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 500px,
+  md: 700px,
+  lg: 900px,
+  xl: 1100px,
+  xxl: 1300px
+);
+
+// $grid-columns: 16;
+
+// spacers
+$spacer: 1.5rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 4,
+);
+
+// borders
+
+$border-width: 1px ;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+);
+
+$border-color: $primary;
+
 // these imports are taken in afterwards, so we can customize eg. colours and it uses it afterwards
 @import '../node_modules/bootstrap/scss/variables';
 @import '../node_modules/bootstrap/scss/mixins';
@@ -22,7 +70,106 @@ $light: #fff9f1;
     @include text-truncate;
 }
 
+// example on how to reset a variable / map it
+// $variable: ("key": val);
+
+$custom-colors: (
+    "primary-light": #fff8fb,
+    "secondary-light": #f6fffb 
+);
+
+// need to assign it using map-merge
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+//remove color from theme colors. in this example, it removes danger
+
+$theme-colors: map-remove($theme-colors, "danger" );
+
+// creating an each loop in sass
+
+@each $color, $val in $colors{
+    .bg-#{$color}{
+        background-color: $val
+    }
+    .bg-#{$color}-light{
+        background-color: tint-color($val, 80%)
+    }
+    .bg-#{$color}-dark{
+        background-color: shade-color($val, 30%)
+    }
+    .text-#{$color}{
+        color: $val
+    }
+    .text-#{$color}-light{
+        color: tint-color($val, 80%)
+    }
+    .text-#{$color}-dark{
+        color: shade-color($val, 30%)
+    }
+};
+
+// font family  
+
+$font-family-base: "Poppins";
+
+// font sizes
+$font-size-base: 1rem;
+$lead-font-size: $font-size-base * 1.5;
+
+// headings
+
+$headings-font-weight: 300;
+$headings-line-height: 1.5;
+$h1-font-size: $font-size-base * 2.75;
+
+// custom display heading (heading 7)
+
+$custom-display-font-sizes:(
+    "7": 2rem,
+    "8": 1.5rem
+);
+
+$display-font-sizes: map-merge($display-font-sizes, $custom-display-font-sizes);
+    
+
+// imports utilities file
+
+@import '../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+
+// map of own utilities
+
+$custom-utilities: (
+    "rotate": (
+        property: transform,
+        class: rotate,
+        values: (
+            0: rotate(0deg),
+            20: rotate(20deg)
+
+        )
+    )
+);
+
+$utilities: map-merge($utilities, $custom-utilities);
+
+//modifying utilities
+
+$modified-utilities:(
+    "border-bottom": (
+      property: border-bottom,
+      values: (
+        null: $border-width dashed $border-color,   
+        0: 0,
+      )
+    ),
+);  
+$utilities: map-merge($utilities, $modified-utilities);
+
+
 // imports a file, this one imports bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './featured.scss';
 
 

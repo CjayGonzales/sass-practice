@@ -53,15 +53,26 @@
     <div class="container-lg">
       <div class="row align-items-center g-5">
         <div class="col-md-6">
-          <img class="img-fluid" src="/img/aub-dish.jpg" alt="recipe image">
+          <!-- featured block component -->
+          <div class="featured-block">
+            <div class="featured-block-badges">
+              <span class="badge bg-primary text-white">
+                <i class="bi bi-heart-fill me-1"></i> Fan Fav
+              </span>
+              <span class="badge bg-primary text-white">
+                <i class="bi bi-clock-fill me-1"></i> Quick Dish
+              </span>
+            </div>
+            <img class="img-fluid" src="/img/aub-dish.jpg" alt="recipe image">
+          </div>
         </div>
         <div class="col-md-6">
           <p class="my-2">
-            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block"></i>
-            <i class="bi bi-hand-thumbs-up text-primary d-inline-block"></i>
+            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block rotate-20"></i>
+            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block rotate-20"></i>
+            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block rotate-20"></i>
+            <i class="bi bi-hand-thumbs-up-fill text-primary d-inline-block rotate-20"></i>
+            <i class="bi bi-hand-thumbs-up text-primary d-inline-block rotate-20"></i>
           </p>
           <h1>Sweet Aubergine Bites</h1>
           <p class="lead">Enjoy this fresh veggie classic on a summer's day.</p>
@@ -86,14 +97,14 @@
           <div class="card bg-secondary text-white mb-3">
             <h5 class="card-header">Ingredients</h5>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-light text-secondary">2 Aubergines</li>
-              <li class="list-group-item bg-light text-secondary">1 Pomegranite</li>
-              <li class="list-group-item bg-light text-secondary">4 Garlic cloves</li>
-              <li class="list-group-item bg-light text-secondary">2 Red chilli peppers</li>
-              <li class="list-group-item bg-light text-secondary">Ground black pepper</li>
-              <li class="list-group-item bg-light text-secondary">4tbsp Olive oil</li>
-              <li class="list-group-item bg-light text-secondary">Handful of black pitted olives</li>
-              <li class="list-group-item bg-light text-secondary">Oregano</li>
+              <li class="list-group-item bg-seconday-light text-secondary">2 Aubergines</li>
+              <li class="list-group-item bg-seconday-light text-secondary">1 Pomegranite</li>
+              <li class="list-group-item bg-seconday-light text-secondary">4 Garlic cloves</li>
+              <li class="list-group-item bg-seconday-light text-secondary">2 Red chilli peppers</li>
+              <li class="list-group-item bg-seconday-light text-secondary">Ground black pepper</li>
+              <li class="list-group-item bg-seconday-light text-secondary">4tbsp Olive oil</li>
+              <li class="list-group-item bg-seconday-light text-secondary">Handful of black pitted olives</li>
+              <li class="list-group-item bg-seconday-light text-secondary">Oregano</li>
             </ul>
           </div>
         </div>
@@ -104,7 +115,9 @@
             <li class="my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non impedit nemo asperiores, dolores eligendi dignissimos quod, dolorem enim totam cum perspiciatis quas molestias animi laudantium accusamus eaque excepturi, in sapiente. Cumque ducimus ratione laborum explicabo quo dolorem tenetur asperiores maiores!</li>
             <li class="my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non impedit nemo asperiores, dolores eligendi dignissimos quod, dolorem enim totam cum perspiciatis quas molestias animi laudantium accusamus eaque excepturi, in sapiente. Cumque ducimus ratione laborum explicabo quo dolorem tenetur asperiores maiores!</li>
           </ol>
-          <div class="p-3 mt-4 rounded text-center border border-2">
+
+          <!-- Custom color background -->
+          <div class="p-3 mt-4 rounded text-center text-pink-dark bg-pink-light border-bottom">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum quisquam asperiores natus vero, iste veniam necessitatibus.</p>
             <button class="btn btn-outline-primary">Edit Recipe</button>
           </div>
@@ -116,7 +129,7 @@
   <!-- similar dishes -->
   <section class="d-none d-lg-block" id="similar">
     <div class="container-md bg-white pt-4 mb-5 mt-n5">
-      <h4 class="text-center mb-4">Similar Recipes</h4>
+      <h4 class="text-center mb-4 display-7">Similar Recipes</h4>
       <div class="row g-4 justify-content-center">
         <div class="col-lg-4 col-xl-3">
           <div class="card">
@@ -155,8 +168,8 @@
   </section>
 
   <!-- footer -->
-  <section class="py-5 bg-light text-muted">
-    <div class="container-lg text-center">
+  <section class="py-5 bg-primary-light text-muted">
+    <div class="container-lg text-center text-danger">
       <p>
         Copyright 2021 NinjaCooks
       </p>
